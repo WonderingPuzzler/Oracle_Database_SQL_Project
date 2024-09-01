@@ -1,6 +1,5 @@
 -- Matthew Perez
 -- 5/10/24
--- ISQA 3310-001
 
 --Query 1
 
@@ -98,17 +97,7 @@ and INSPECTOR.INSPECT_LAST_NAME = 'Rogers'
 and INSPECTION.INSP_DATE_OF_INSPECTION = '15-OCT-2023';
 
 
-
 --Query 9
-
-update Point_Of_Contact
-set POC_FNAME = 'Nomore', POC_LNAME = 'NamesPlz', POC_PHONE_NUMBER = '402-000-0000'
-where POC_ID = 4;
-
-
-
---Query 10
-
 
 delete from FACILITY
 where FAC_ID = 4;
@@ -127,5 +116,3 @@ where FAC_ID = 4;
 
 delete from ILLNESS_COMPLAINT
 where FAC_ID = 4;
-
--- It seems like I only needed the first delete from to get rid of all mentions of the fourth facility, but I thought I would be better safe than sorry, and show which tables are connected through FAC_ID
