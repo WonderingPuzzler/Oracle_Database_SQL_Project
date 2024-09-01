@@ -1,7 +1,5 @@
 -- Matthew Perez
 -- 5/10/24
--- ISQA 3310-001
-
 
 -- a.
 
