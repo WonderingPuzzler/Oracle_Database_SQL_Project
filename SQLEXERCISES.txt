@@ -1,7 +1,8 @@
 -- Matthew Perez
 -- 5/10/24
 
---Query 1
+--Query 1 - Write a single SQL SELECT statement to select the address, the risk rating, the overall sanitation rating, the name and
+phone number of the point-of-contact person for the 'Marvel Diner' facility/facility.
 
 select FACILITY.FAC_STREET, FACILITY.FAC_STREET_2, FACILITY.FAC_CITY, FACILITY.FAC_STATE, FACILITY.FAC_ZIP_CODE, FACILITY.FAC_RISK_LEVEL, FACILITY.FAC_OVERALL_SANITATION_RATING, POINT_OF_CONTACT.POC_FNAME, POINT_OF_CONTACT.POC_LNAME, POINT_OF_CONTACT.POC_PHONE_NUMBER 
 from FACILITY 
@@ -11,7 +12,10 @@ where FACILITY.FAC_ID = 1;
 
 
 
---Query 2
+--Query 2 - Write a single SQL SELECT statement to select the first and last names of each inspector in your database working
+for ‘Wandavision Inspections’. Include the hire date, certification date, and e-mail address of each inspector. Order
+the records by the certification date, with the most recent certification date first. You should have at least 2 inspectors,
+‘Stephen Rogers’ and ‘Wanda Maximoff’ based on the requirements for Task 2 above.
 
 select INSPECT_FIRST_NAME, INSPECT_LAST_NAME, INSPECT_HIRE_DATE, INSPECT_CERTIFICATION_DATE, INSPECT_EMAIL_ADDRESS
 from INSPECTOR
@@ -20,7 +24,10 @@ order by INSPECT_CERTIFICATION_DATE;
 
 
 
---Query 3
+--Query 3 - Write a single SQL SELECT statement to select all complaints filed against 'Marvel Diner' facility. Select the name,
+address, and phone number of the customer filing the complaint, the date of the complaint, the type of complaint, and
+the comments left by the complainant. Order the results by date with the newest complaint listed last and the oldest
+listed first. You should have at least 2 complaints based on the requirements for Task-2 above.
 
 select CUSTOMER.CUST_FIRST_NAME, CUSTOMER.CUST_LAST_NAME, CUSTOMER.CUST_STREET, CUSTOMER.CUST_STREET_2, CUSTOMER.CUST_CITY, CUSTOMER.CUST_STATE, CUSTOMER.CUST_ZIP_CODE, CUSTOMER.CUST_PHONE, COMPLAINT.COMP_DATE, COMPLAINT.COMP_TYPE, COMPLAINT.COMP_TEXT
 from CUSTOMER
@@ -31,7 +38,9 @@ order by COMPLAINT.COMP_DATE;
 
 
 
---Query 4
+--Query 4 - Write a single SQL SELECT statement to select the names and addresses of all facilities with an inspection date of
+‘15-Oct-2023’. Include the overall rating in your results. You should have at least 2 records per the requirements from
+Task-2, Part 1 above.
 
 select FACILITY.FAC_NAME, FACILITY.FAC_STREET, FACILITY.FAC_STREET_2, FACILITY.FAC_CITY, FACILITY.FAC_STATE, FACILITY.FAC_ZIP_CODE, INSPECTION.INSP_FINAL_RATING
 from FACILITY
@@ -41,7 +50,10 @@ where INSPECTION.INSP_DATE_OF_INSPECTION = '15-OCT-2023';
 
 
 
---Query 5
+--Query 5 - Write a single SQL SELECT statement to select all the inspection information recorded for all inspections conducted
+by ‘Stephen Rogers’. You must use the name of the inspector in your WHERE clause, not her inspector ID. Include
+the name of the facility in the results. This query requires a join of at least 3 tables: the inspection table, the inspector
+table, and the facility table.
 
 select INSPECTION.INSP_FOOD_SOURCE, INSPECTION.INSP_PROPER_FOOD_TEMP_CONTROL, INSPECTION.INSP_PERSONAL_HYGIENE, INSPECTION.INSP_CLEANING, INSPECTION.INSP_INSECT, INSPECTION.INSP_WASTE_DISPOSAL, INSPECTION.INSP_FINAL_RATING, INSPECTION.INSP_DATE_OF_INSPECTION, INSPECTION.INSP_RISK_DESCRIPTION, INSPECTION.INSPECT_ID, INSPECTION.FAC_ID, INSPECTION.OFF_NUM, FACILITY.FAC_NAME 
 from INSPECTION 
@@ -54,7 +66,12 @@ and INSPECTOR.INSPECT_LAST_NAME = 'Rogers';
 
 
 
---Query 6
+--Query 6 - Write a single SQL SELECT statement to select all the information shown in the sample report provided in Sub-
+view/External Schema 3: Inspections (from Part 1). Be sure to include the name of the facility, the street address of
+the facility, the facility type, the overall rating, and the date of the most recent inspection in your results. Include only
+the fields shown in the report and order the results by the name of the facility as shown in the report segment. Hint:
+use ‘MAX’ for the date in the WHERE clause. This query will require a ‘join’ of 2 tables, the facility and the
+inspection tables.
 
 select FACILITY.FAC_NAME, FACILITY.FAC_STREET, FACILITY.FAC_GENERAL_TYPE, FACILITY.FAC_OVERALL_SANITATION_RATING, INSPECTION.INSP_DATE_OF_INSPECTION 
 from FACILITY
@@ -68,7 +85,11 @@ order by FACILITY.FAC_NAME;
 
 
 
---Query 7
+--Query 7 - The 'Marvel Diner' facility was just inspected again on ‘17-Nov-2023' and received the highest ratings in all
+categories with a new overall rating of 'Superior'. Write an SQL INSERT statement and possibly an UPDATE
+statement to reflect this inspection in your database. Include updates to your inspection table and possibly your facility
+table and other related tables. You may choose values of your choice for any value not specifically listed in this
+statement.
 
 insert into INSPECTION
 values ('Superior', 'Superior', 'Superior', 'Superior', 'Superior', 'Superior', 'Superior', '17-NOV-2023', 'Perfection incarnate!', 4, 1, 3);
@@ -79,7 +100,10 @@ where FAC_ID = 1;
 
 
 
---Query 8
+--Query 8 - For the inspection at the 'Marvel Diner' conducted by 'Stephen Rogers' on ‘15-Oct-2023’created in Task 2 above,
+select the facility name, inspector name, and all fees charged. This will require a ‘join’ of 5 tables in your database –
+the Facility, Inspection, Inspector, Inspection Fee, and Fee tables. Verify you included all the primary key to foreign
+key columns in your query.
 
 select FACILITY.FAC_NAME, INSPECTOR.INSPECT_FIRST_NAME, INSPECTOR.INSPECT_LAST_NAME, FEE.FEE_INITIAL_PERMIT, FEE.FEE_FIRST_PREP_AREA, FEE.FEE_NO_FOOD_PREP_AREA, FEE.FEE_ADD_FOOD_PREP
 from INSPECTION
@@ -97,7 +121,10 @@ and INSPECTOR.INSPECT_LAST_NAME = 'Rogers'
 and INSPECTION.INSP_DATE_OF_INSPECTION = '15-OCT-2023';
 
 
---Query 9
+--Query 9 - One of your facilities is no longer in business. Write the appropriate SQL DELETE statements to completely remove
+this facility from your database. You should assume inspections may have been conducted for this facility, therefore,
+you should delete any associated inspection records as well. More than one delete statement may need to be
+written for this task.
 
 delete from FACILITY
 where FAC_ID = 4;
