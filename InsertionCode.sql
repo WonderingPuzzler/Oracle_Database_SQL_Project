@@ -1,0 +1,242 @@
+-- Matthew Perez
+-- 5/10/24
+
+
+-- a. 
+
+insert into FACILITY 
+values ('Marvel Diner', 'Restaurant', 1, 'Medium', 'Excellent', '15242 Wallabee Drive', NULL, 'Omaha', 'NE', '63241' );
+
+insert into POINT_OF_CONTACT
+values ('Carol', 'Danvers', '402-129-2931', 'CarolDanvers@gmail.com', 1, 1);
+
+-- b.
+
+insert into INSPECT_OFF
+values (1, 'Wandavision Inspections', '2452 Sense Ave.', NULL, 'Omaha', 'NE', '63425', 'John', '402-423-3019', 'JohnMoe@iCloud.com', 'Moe');
+
+-- c.
+insert into INSPECTOR
+values ('Stephen', 'Rogers', '12-FEB-2020', '15-MAR-2020', '304-492-1944', 'StephenRogers@yahoo.com', 1, 1);
+
+-- d.
+
+insert into INSPECTOR
+values ('Wanda', 'Maximoff', '1-JUN-2023', '20-JUN-2023', '302-414-2021', 'WandaMaximoff@gmail.com', 2, 1);
+
+-- e.
+
+insert into INSPECTION
+values ('Fair', 'Standard', 'Standard', 'Standard', 'Standard', 'Standard', 'Standard', '10-SEP-2023', 'Issues with food source, other things fine', 1, 1, 1);
+
+-- f. 
+
+insert into INSPECTION
+values ('Standard', 'Excellent', 'Excellent', 'Superior', 'Excellent', 'Superior', 'Excellent', '15-OCT-2023', NULL, 1, 1, 1);
+
+-- g. 
+
+insert into FACILITY 
+values ('Joes Lobster Hut', 'Restaurant', 2, 'High', 'Fair', '13919 Undersea St.', NULL, 'Des Moines', 'IA', '53848' );
+
+insert into POINT_OF_CONTACT
+values ('Gary', 'Smith', '398-242-4929', 'GarySmith@gmail.com', 2, 2);
+
+insert into INSPECTION
+values ('Fair', 'Fair', 'Fair', 'Fair', 'Fair', 'Fair', 'Fair', '15-OCT-2023', NULL, 1, 2, 1);
+
+-- h.
+
+insert into CUSTOMER
+values ('David', 'Banner', '93299 Real St.', NULL, 'Omaha', 'NE', '68218', '402-592-1010', 'DavidBanner@yahoo.com', '32', 'Male', 1); 
+
+insert into COMPLAINT
+values ('1-FEB-2022', 'Marvel Diner', 'u guys suck and I hat you and and you should go bankrupt!11!!1', 'Employee Conduct', 1, 1);
+
+insert into COMPLAINT
+values ('1-OCT-2022', 'Marvel Diner', 'YOU DEPLORABLE REPROBATES! IS THERE EVER AN END TO THE DEPTHS OF YOUR DEPRAVITY?! YOU MADE MY FAMILY ILL!!!', 'Illness', 1, 1);
+
+insert into ILLNESS_INFORMATION
+values ('Salmonella', '1-7 days', '1-7 days');
+
+insert into ILLNESS_COMPLAINT
+values ('1-OCT-2022', 5, 'Yes', '29-SEP-2022', 'Salmonella', 1, 1);
+
+
+-- i. 
+
+insert into FEE
+values ('All Other Food Establishments', 86.89, 120.64, NULL, 43.09);
+
+-- j.
+
+insert into FEE_INSPECTION
+values ('All Other Food Establishments', '15-OCT-2023', 1);
+
+
+
+-- Part 2 of 2.
+
+-- Facility 
+insert into FACILITY 
+values ('Moes', 'Bar', 3, 'High', 'Fair', '3828 Yellow Ave.', NULL, 'Des Moines', 'IA', '52053' );
+
+insert into FACILITY 
+values ('Granite City', 'Restaurant', 4, 'Medium', 'Standard', '6152 O St.', NULL, 'Lincoln', 'NE', '61028' );
+
+insert into FACILITY 
+values ('Burke High', 'School', 5, 'Medium', 'Standard', '28181 Plausible Drive', NULL, 'Omaha', 'NE', '61721' );
+
+
+
+--Point-Of-Contact
+insert into POINT_OF_CONTACT
+values ('John', 'Doe', '391-921-2929', 'JohnDoe@gmail.com', 3, 3);
+
+insert into POINT_OF_CONTACT
+values ('Lisa', 'May', '402-452-2929', 'LisaMay@yahoo.com', 4, 4);
+
+insert into POINT_OF_CONTACT
+values ('June', 'Smith', '402-731-4820', 'JuneSmith@gmail.com', 5, 5);
+
+
+
+--Inspection_Office
+insert into INSPECT_OFF
+values (2, 'Sucky Inspections Co.', '4422 Trash Rd.', NULL, 'Des Moines', 'IA', '51939', 'Isabelle', '313-939-1019', 'IsabelleRinging@iCloud.com', 'Ringing');
+
+insert into INSPECT_OFF
+values (3, 'Superior Inspections Co.', '2929 Elitist Drive', NULL, 'Omaha', 'NE', '61038', 'Whatsit', '302-999-1932', 'WhatsitToya@iCloud.com', 'Toya');
+
+insert into INSPECT_OFF
+values (4, 'Mario Bros.', '19291 Mushroom BLVD.', NULL, 'Omaha', 'NE', '69219', 'Mario', '302-939-1949', 'MarioMario@iCloud.com', 'Mario');
+
+insert into INSPECT_OFF
+values (5, 'True Inspectors', '11929 Truth St.', NULL, 'Des Moines', 'IA', '51939', 'Actual', '349-888-1029', 'ActualPerson@Yahoo.com', 'Person');
+
+
+
+--Inspector
+insert into INSPECTOR
+values ('Nikoli', 'Putin', '5-JAN-2023', '29-JAN-2023', '391-201-2022', 'NikolaiPutin@yahoo.com', 3, 2);
+
+insert into INSPECTOR
+values ('Sir Irving', 'Spoon', '5-FEB-2023', '12-FEB-2023', '402-212-1110', 'SirIrvingSpoon@yahoo.com', 4, 3);
+
+insert into INSPECTOR
+values ('Luigi', 'Bord', '10-MAR-2022', '12-MAR-2022', '402-331-3924', 'LuigiBord@iCloud.com', 5, 4);
+
+insert into INSPECTOR
+values ('Sandy', 'Berger', '15-MAY-2022', '20-MAY-2022', '349-212-9327', 'SandyBerger@iCloud.com', 6, 5);
+
+
+
+--Inspection
+insert into INSPECTION
+values ('Standard', 'Fair', 'Fair', 'Fair', 'Fair', 'Excellent', 'Fair', '9-APR-2023', NULL, 3, 3, 2);
+
+insert into INSPECTION
+values ('Superior', 'Superior', 'Superior', 'Superior', 'Superior', 'Superior', 'Superior', '18-NOV-2022', NULL, 4, 3, 3);
+
+insert into INSPECTION
+values ('Superior', 'Superior', 'Superior', 'Superior', 'Superior', 'Superior', 'Superior', '30-DEC-2022', NULL, 5, 4, 4);
+
+insert into INSPECTION
+values ('Excellent', 'Superior', 'Fair', 'Superior', 'Superior', 'Excellent', 'Excellent', '4-JAN-2023', NULL, 6, 5, 5);
+
+
+
+--Customer
+insert into CUSTOMER
+values ('Matt', 'Welter', '2883 New Rd.', 'Apt. 2', 'Omaha', 'NE', '61932', '402-333-2949', 'MattWelter@gmail.com', '25', 'Male', 2); 
+
+insert into CUSTOMER
+values ('Jack', 'Anderson', '42884 Wallabee Rd.', NULL, 'Des Moines', 'IA', '54689', '392-237-5828', 'JackAnderson@gmail.com', '44', 'Male', 3); 
+
+insert into CUSTOMER
+values ('Alyssa', 'Perez', '69399 Running Outta Names Ave.', 'Apt. 21', 'Des Moines', 'IA', '53153', '391-494-3855', 'AlyssaPerez@gmail.com', '21', 'Female', 4); 
+
+insert into CUSTOMER
+values ('Sarah', 'Noem', '55829 Nota Real St.', NULL, 'Omaha', 'NE', '61124', '402-444-5882', 'SarahNoem@gmail.com', '36', 'Female', 5); 
+
+
+
+--Illness_Information
+insert into ILLNESS_INFORMATION
+values ('Campylobacter', '2-5 days', '1-4 days');
+
+insert into ILLNESS_INFORMATION
+values ('Hepatitis A', '10-50 days', '1-2 weeks; severe cases may last several months');
+
+insert into ILLNESS_INFORMATION
+values ('Shiga Toxin-Producing E. coli', '12-74 hours', '1-4 days');
+
+insert into ILLNESS_INFORMATION
+values ('Norovirus', '24-48 hours', '1-2 days');
+
+insert into ILLNESS_INFORMATION
+values ('Staphylococcusauereus', '1-7 hours', '1-2 days');
+
+
+
+--Complaint
+insert into COMPLAINT
+values ('1-MAR-2022', 'Joes Lobster Hut', 'Got sick off of Lobster Bisque... Do better...', 'Illness', 2, 2);
+
+insert into COMPLAINT
+values ('13-DEC-2022', 'Moes', 'Something was wrong with the burger I had! First time I have gotten sick here! Usually better!', 'Illness', 3, 3);
+
+insert into COMPLAINT
+values ('13-FEB-2023', 'Granite City', 'Me and my friends got sick! Dont know from what. Do you guys even wash your hands over there?!', 'Illness', 4, 4);
+
+insert into COMPLAINT
+values ('17-MAR-2023', 'Burke High', 'All of our students got sick! We think it was something in the pizza we served them!', 'Illness', 5, 5);
+
+
+
+--Illness Complaint
+insert into ILLNESS_COMPLAINT
+values ('1-MAR-2022', 1, 'Yes', '30-APR-2022', 'Norovirus', 2, 2);
+
+insert into ILLNESS_COMPLAINT
+values ('13-DEC-2022', 1, 'Yes', '11-DEC-2022', 'Shiga Toxin-Producing E. coli', 3, 3);
+
+insert into ILLNESS_COMPLAINT
+values ('13-FEB-2023', 6, 'No', '5-FEB-2023', 'Campylobacter', 4, 4);
+
+insert into ILLNESS_COMPLAINT
+values ('17-MAR-2023', 225, 'Yes', '16-MAR-2023', 'Staphylococcusauereus', 5, 5);
+
+
+
+--Fee
+insert into FEE
+values ('Mobile Food Unit (for each unit)', 86.19, NULL, 43.09, NULL);
+
+insert into FEE
+values ('One to ten units', 50.00, NULL, 17.23, NULL);
+
+insert into FEE
+values ('Eleven to twenty units', 75.00, NULL, 34.46, NULL);
+
+insert into FEE
+values ('Food Delivery Service', 86.19, NULL, 17.23, NULL);
+
+insert into FEE
+values ('Licensed Beverage Establishment', 86.19, 120.64, NULL, 43.09);
+
+
+
+--Fee Inspection
+insert into FEE_INSPECTION
+values ('All Other Food Establishments', '15-OCT-2023', 2);
+
+insert into FEE_INSPECTION
+values ('Licensed Beverage Establishment', '9-APR-2023', 3);
+
+insert into FEE_INSPECTION
+values ('All Other Food Establishments', '30-DEC-2022', 4);
+
+insert into FEE_INSPECTION
+values ('All Other Food Establishments', '4-JAN-2023', 5);
+
